@@ -11,13 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".equipment_dashboard"></activity>
+        <activity android:name=".FeedbackDashboard"></activity>
+        <activity android:name=".SingleRowContent" />
+        <activity android:name=".Feedbacks" />
+        <activity android:name=".FeedbackAndComplains" />
+        <activity android:name=".Complains" />
+        <activity android:name=".equipment_dashboard" />
         <activity android:name=".insert_equipment" />
         <activity android:name=".insert_pet" />
         <activity android:name=".category_list" />
         <activity android:name=".dashboard" />
         <activity android:name=".SignUp" />
         <activity android:name=".SignIn" />
+        <activity android:name=".Food" />
+        <activity android:name=".Dogfood" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

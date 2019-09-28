@@ -12,6 +12,8 @@ public class dashboard extends AppCompatActivity {
     TextView txtbtn;
     TextView txtbtn2;
     TextView txtbtn3;
+    TextView txtbtn4;
+    TextView txtbtn5;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +27,15 @@ public class dashboard extends AppCompatActivity {
                 Intent intent = new Intent(dashboard.this, category_list.class);
                 startActivity(intent);
 
+            }
+        });
+
+        txtbtn5 = (TextView) findViewById(R.id.arr1);
+        txtbtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent2 = new Intent(dashboard.this, Food.class);
+                startActivity(intent2);
             }
         });
 
@@ -43,6 +54,15 @@ public class dashboard extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent3 = new Intent(dashboard.this, equipment_dashboard.class);
                 startActivity(intent3);
+            }
+        });
+
+        txtbtn4 = (TextView) findViewById(R.id.arr4);
+        txtbtn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(dashboard.this, FeedbackDashboard.class);
+                startActivity(intent4);
             }
         });
     }

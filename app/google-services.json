@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "552260349902-7gmvpvts33e3lv7r2ll9af4i0qik2vrs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kasun.tasteit",
+            "certificate_hash": "f2976a2eff2368501ef72db1d4089f3ed2046f90"
+          }
+        },
+        {
+          "client_id": "552260349902-sggl8u0peqn6jb710rfcke41ir09n4fg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.kasun.tasteit",
+            "certificate_hash": "5a4e9bb347f85f9bf9a2b542a30f208374218da7"
+          }
+        },
+        {
           "client_id": "552260349902-3q5q6l2p50r9291qpo07l6p2ccvhebgq.apps.googleusercontent.com",
           "client_type": 3
         }
