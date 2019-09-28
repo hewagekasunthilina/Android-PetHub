@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#004d40</color>
+    <color name="colorPrimaryDark">#00251a</color>
+    <color name="colorAccent">#F87545</color>
+
+    <color name="btnSignUp">#8CF0DA</color>
+    <color name="btnSignActive">#A9d440</color>
+
+    <color name="btnSignIn">#39796b</color>
+
+    <color name="overlayBackground">#7f333639</color>
+    <color name="overlayActionBar">#0e0d0e</color>
+
+    <color name="black_semi_transparent">#82000000</color>
+
+    <color name="form_background">#C4FCC6</color>
+    <color name="choose_img_btn">#9CF19E</color>
+
+
+
+
+    <!-- IT17059428 Amarsinghe A.A.S.M -->
+
+
+    <color name="form">#95F0D6</color>
+    <color name="formhint">#00251a</color>
+    <color name="formName">#069941</color>
+
+
+</resources>

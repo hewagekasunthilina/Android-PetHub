@@ -1,0 +1,139 @@
+<resources>
+
+    <!-- IT 18197624 Bamunuge H.K.T -->
+
+    <string name="app_name">PetHub</string>
+    <string name="slogan">Now That Your Tastes Have Grown Up!</string>
+    <string name="title_activity_home">Home</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="menu_tools">Tools</string>
+    <string name="menu_share">Share</string>
+    <string name="menu_send">Send</string>
+
+    <string name="txtdashboard">Dashboard</string>
+    <string name="pet_manager">Pets</string>
+    <string name="food_manager">Foods</string>
+    <string name="equipment_manager">Equipments</string>
+    <string name="medical_manager">Medicines</string>
+    <string name="feedback_manager">Feedbacks</string>
+    <string name="contact_manager">Contacts</string>
+
+    <string name="sign_in_button">Sign In</string>
+    <string name="sign_up_button">Sign Up</string>
+
+    <string name="nickname">Enter Nickname</string>
+    <string name="age">Enter Age</string>
+    <string name="familyname">Enter Family Name</string>
+
+    <string name="description">This will be a description of each category</string>
+    <string name="category_title">Title</string>
+
+    <string name="search_bar">Search</string>
+    <string name="settings">Settings</string>
+
+    <string name="pet_add_title">Add New Pet</string>
+    <string name="spinner_text">Select Category</string>
+
+    <string-array name="category">
+        <item>Cat</item>
+        <item>Dog</item>
+        <item>Rabbit</item>
+        <item>Love Bird</item>
+    </string-array>
+
+
+    <!-- IT 18197624 Bamunuge H.K.T -->
+    <!-- IT 17059428 AMarasinghe A.A.S.M -->
+
+    <string name="equipment">EQUIPMENT</string>
+    <string name="equipmentName">Name</string>
+    <string name="owner">Owner Name</string>
+    <string name="contact">Contact Number</string>
+    <string name="price">Price</string>
+    <string name="date">Date</string>
+    <string name="image">Image</string>
+    <string name="addImage">UPLOAD</string>
+    <string name="addeq">ADD EQUIPMENT</string>
+    <string name="btncage">CAGES</string>
+    <string name="btnchains">CHAINS</string>
+    <string name="btncombs">COMBS</string>
+    <string name="btntoys">TOYS</string>
+    <string name="btnscarfs">SCARFS</string>
+    <string name="categoryName">CATEGORY VIEW</string>
+
+    <string name="category_dashboard">Equipment Dashboard</string>
+
+    <string name="cages">Cages</string>
+    <string name="collar">Collars</string>
+    <string name="toys">Toys</string>
+    <string name="scarf">Scarfs</string>
+    <string name="chain">Chain</string>
+    <string name="aquarium">Aquariums</string>
+
+    <string name="equipment_add_title">Add New Equipment</string>
+    <string name="choose_img_btn">Choose Image</string>
+
+    <string-array name="category_equipment">
+        <item>Cages</item>
+        <item>Collers</item>
+        <item>Belts</item>
+        <item>Aquarium</item>
+    </string-array>
+
+
+    <!-- IT 18165258 Rajapakshe R.M.P.R.L-->
+
+    <string name="medicine_title">Categories</string>
+    <string name="medicine_category">Pet Medicine</string>
+    <string name="Medicine_search">search</string>
+    <string name="view_button">All products</string>
+
+    <string name="medicine_text">FLEA TREATMENT</string>
+    <string name="medicine_dog">DOG</string>
+    <string name="medicine_cat">CAT</string>
+    <string name="medicine_worms">WORMERS</string>
+    <string name="medicine_add">Add Items</string>
+    <!-- IT 18165258 Rajapakshe R.M.P.R.L-->
+
+
+    <!-- IT 18147360 Malassri IMS-->
+
+    <string name="food_cate">Food Categories</string>
+    <string name="food_subcate">Food Sub Categories</string>
+    <string name="dog_food">Dog Food</string>
+    <string name="cat_food">Cat Food</string>
+    <string name="bird_food">Bird Food</string>
+    <string name="fish_food">Fish Food</string>
+
+
+
+    <string name="dogfoodTitle">Dog Food Categories</string>
+    <string name="dogdryfood">Dry Food</string>
+    <string name="dogwetfood">Wet Food</string>
+    <string name="dogorganicfood">Organic Food</string>
+    <string name="dogsnacks">Dog Snacks</string>
+    <string name="adddogfood">Add Food</string>
+
+    <string name="addpetfood">Add Pet Food</string>
+    <string name="foodbrand">Food Brand</string>
+    <string name="foodimage">Image of the Product</string>
+    <string name="foodadd">Add</string>
+    <string name="foodprice">Price</string>
+    <string name="edate">Expire Date</string>git
+    <string name="add">Add</string>
+
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
+</resources>
