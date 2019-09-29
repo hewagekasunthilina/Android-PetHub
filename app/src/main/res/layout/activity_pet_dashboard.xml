@@ -103,7 +103,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/cat" />
+                        android:src="@drawable/cats" />
 
                     <TextView
                         android:id="@+id/cat"
@@ -171,7 +171,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/cat" />
+                        android:src="@drawable/rabbit" />
 
                     <TextView
                         android:id="@+id/rabbit"
@@ -205,7 +205,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/aquarium" />
+                        android:src="@drawable/fish" />
 
                     <TextView
                         android:id="@+id/aquarium"

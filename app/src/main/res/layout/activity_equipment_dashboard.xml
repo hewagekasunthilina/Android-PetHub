@@ -70,10 +70,10 @@
 
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/cage" />
+                        android:src="@drawable/cag1" />
 
                     <TextView
-                        android:id="@+id/suggestion"
+                        android:id="@+id/category1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
@@ -104,7 +104,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/toys" />
+                        android:src="@drawable/ty1" />
 
                     <TextView
                         android:id="@+id/arr1"
@@ -138,7 +138,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/scarf" />
+                        android:src="@drawable/sca1" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -171,7 +171,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/belt" />
+                        android:src="@drawable/col1" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -204,7 +204,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/chain" />
+                        android:src="@drawable/cha1" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -239,7 +239,7 @@
                     <ImageView
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/aquarium" />
+                        android:src="@drawable/aq1" />
 
                     <TextView
                         android:id="@+id/arr2"
