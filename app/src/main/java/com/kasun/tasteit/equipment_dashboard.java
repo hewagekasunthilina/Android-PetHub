@@ -5,10 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class equipment_dashboard extends AppCompatActivity {
+
+    TextView txtbtn6;
 
     FloatingActionButton floatingActionButton;
 
@@ -28,6 +31,17 @@ public class equipment_dashboard extends AppCompatActivity {
 
             }
         });
+
+        txtbtn6 = (TextView) findViewById(R.id.arr1);
+        txtbtn6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent4 = new Intent(equipment_dashboard.this, dog_list.class);
+                startActivity(intent4);
+            }
+        });
+
+
 
 
     }

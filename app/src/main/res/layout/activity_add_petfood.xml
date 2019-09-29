@@ -112,7 +112,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:hint="@string/edate"
+        android:hint="@string/foodedate"
         android:importantForAutofill="no"
         android:inputType="text"
         android:textColorHint="#111010"

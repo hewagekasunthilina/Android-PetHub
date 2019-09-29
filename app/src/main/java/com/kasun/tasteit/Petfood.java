@@ -2,54 +2,32 @@ package com.kasun.tasteit;
 
 public class Petfood {
 
-    private String foodCate;
-    private String foodsubCate;
-    private String foodPrice;
-    private String expDate;
+    private String foodName;
     private String foodBrand;
+    private String foodPrice;
+    private String foodexpDate;
+    private String foodmanDate;
 
-    public Petfood(){
 
-    }
 
-    public Petfood(String foodCate,String foodsubCate,String foodPrice,String expDate,String foodBrand){
-        this.expDate = expDate;
-        this.foodsubCate = foodsubCate;
-        this.foodPrice = foodPrice;
-        this.expDate = expDate;
+    private String foodId;
+
+    public Petfood(String foodId, String foodName,String foodBrand,String foodPrice,String foodexpDate,String foodmanDate){
+        this.foodName = foodName;
         this.foodBrand = foodBrand;
-    }
-
-    public String getFoodCate() {
-        return foodCate;
-    }
-
-    public void setFoodCate(String foodCate) {
-        this.foodCate = foodCate;
-    }
-
-    public String getFoodsubCate() {
-        return foodsubCate;
-    }
-
-    public void setFoodsubCate(String foodsubCate) {
-        this.foodsubCate = foodsubCate;
-    }
-
-    public String getFoodPrice() {
-        return foodPrice;
-    }
-
-    public void setFoodPrice(String foodPrice) {
         this.foodPrice = foodPrice;
+        this.foodexpDate = foodexpDate;
+        this.foodmanDate = foodmanDate;
+        this.foodId = foodId;
     }
 
-    public String getExpDate() {
-        return expDate;
+
+    public String getFoodName() {
+        return foodName;
     }
 
-    public void setExpDate(String expDate) {
-        this.expDate = expDate;
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
     }
 
     public String getFoodBrand() {
@@ -60,6 +38,41 @@ public class Petfood {
         this.foodBrand = foodBrand;
     }
 
+    public String getFoodPrice() {
+        return foodPrice;
+    }
+
+    public void setFoodPrice(String foodPrice) {
+        this.foodPrice = foodPrice;
+    }
+
+    public String getFoodexpDate() {
+        return foodexpDate;
+    }
+
+    public void setFoodexpDate(String foodexpDate) {
+        this.foodexpDate = foodexpDate;
+    }
+
+    public String getFoodmanDate() {
+        return foodmanDate;
+    }
+
+    public void setFoodmanDate(String foodmanDate) {
+        this.foodmanDate = foodmanDate;
+    }
+
+    public String getFoodId() {
+        return foodId;
+    }
+
+    public void setFoodId(String foodId) {
+        this.foodId = foodId;
+    }
+
+    public Petfood(){
+
+    }
 
 
 

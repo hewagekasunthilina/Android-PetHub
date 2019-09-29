@@ -6,13 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
+import android.widget.TextView;
 
 
 public class Food extends AppCompatActivity {
 
-    Button btndogfood, btnaddpetfood;
+    TextView food1;
 
 
     @Override
@@ -20,28 +20,13 @@ public class Food extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_food);
 
-        btndogfood = (Button)findViewById(R.id.btndogfood);
-        btndogfood.setOnClickListener(new View.OnClickListener() {
+        food1 = (TextView) findViewById(R.id.dog_food);
+        food1.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent dogfood;
-                dogfood = new Intent(Food.this, Dogfood.class);
-                startActivity(dogfood);
-
+            public void onClick(View v) {
+                Intent intent1 = new Intent(Food.this, dogfood_list.class);
+                startActivity(intent1);
             }
         });
-        btnaddpetfood = (Button)findViewById(R.id.btnaddPetfood);
-        btnaddpetfood.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent addfood = new Intent(Food.this, Addpetfood.class);
-                startActivity(addfood);
-
-            }
-        });
-
     }
-
-
-
 }

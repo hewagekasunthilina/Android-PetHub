@@ -24,13 +24,13 @@ public class dashboard extends AppCompatActivity {
         txtbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(dashboard.this, category_list.class);
+                Intent intent = new Intent(dashboard.this, pet_dashboard.class);
                 startActivity(intent);
 
             }
         });
 
-        txtbtn5 = (TextView) findViewById(R.id.arr1);
+        txtbtn5 = (TextView) findViewById(R.id.dashboard_food);
         txtbtn5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,5 +65,6 @@ public class dashboard extends AppCompatActivity {
                 startActivity(intent4);
             }
         });
+
     }
 }

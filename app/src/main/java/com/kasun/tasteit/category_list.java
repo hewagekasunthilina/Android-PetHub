@@ -33,7 +33,7 @@ public class category_list extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_category_list);
 
-        floatingActionButton = (FloatingActionButton) findViewById(R.id.add_btn);
+        floatingActionButton = (FloatingActionButton) findViewById(R.id.dog_insert);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

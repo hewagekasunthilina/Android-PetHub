@@ -30,7 +30,7 @@ public class FeedbackDashboard extends AppCompatActivity {
             }
         });
 
-        txtbtn22 = (TextView) findViewById(R.id.arr1);
+        txtbtn22 = (TextView) findViewById(R.id.dashboard_food);
         txtbtn22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

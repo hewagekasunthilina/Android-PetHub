@@ -26,12 +26,6 @@ public class insert_equipment extends AppCompatActivity  {
     EditText equipmentname, ownername, price, contactnumber, publishdate;
     Button addequipment, button6;
     TextView show_upload;
-    ProgressBar progress_bar;
-    Uri ImageUri;
-    ImageView imageView;
-
-//    Spinner spinner;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,15 +37,8 @@ public class insert_equipment extends AppCompatActivity  {
         price = (EditText) findViewById(R.id.price);
         contactnumber = (EditText) findViewById(R.id.contactnumber);
         publishdate = (EditText) findViewById(R.id.publishdate);
-        imageView = (ImageView) findViewById(R.id.image_view);
-
         show_upload = (TextView) findViewById(R.id.show_upload);
-        progress_bar = (ProgressBar) findViewById(R.id.progress_bar);
-
-        //spinner = (Spinner) findViewById(R.id.spinner);
-
         addequipment = (Button) findViewById(R.id.addequipment);
-        button6 = (Button) findViewById(R.id.button6);
 
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -87,14 +74,10 @@ public class insert_equipment extends AppCompatActivity  {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
 
-            ImageUri = data.getData();
 
-            Picasso.with(this).load(ImageUri).into(imageView);
         }
     }
-}
 
 
 

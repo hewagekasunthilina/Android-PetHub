@@ -2,26 +2,32 @@ package com.kasun.tasteit;
 
 public class Pet {
 
+    private String Id;
     private String FamilyName;
     private String Model;
     private String Age;
     private String NickName;
-    private String DOB;
-    private String Breed;
     private String Gender;
 
     public Pet(){
 
     }
 
-    public Pet(String familyName, String model, String age, String nickName, String DOB, String breed, String gender) {
+    public Pet(String id,String familyName, String model, String age, String nickName, String gender) {
+        Id = id;
         FamilyName = familyName;
         Model = model;
         Age = age;
         NickName = nickName;
-        this.DOB = DOB;
-        Breed = breed;
         Gender = gender;
+    }
+
+    public String getId(){
+        return Id;
+    }
+
+    public void setId(String id) {
+        Id = id;
     }
 
     public String getFamilyName() {
@@ -54,22 +60,6 @@ public class Pet {
 
     public void setNickName(String nickName) {
         NickName = nickName;
-    }
-
-    public String getDOB() {
-        return DOB;
-    }
-
-    public void setDOB(String DOB) {
-        this.DOB = DOB;
-    }
-
-    public String getBreed() {
-        return Breed;
-    }
-
-    public void setBreed(String breed) {
-        Breed = breed;
     }
 
     public String getGender() {

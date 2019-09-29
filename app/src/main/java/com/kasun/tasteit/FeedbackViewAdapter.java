@@ -21,6 +21,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.kasun.tasteit.Model.Feedback;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class FeedbackViewAdapter extends RecyclerView.Adapter<FeedbackViewAdapter.FeedbackViewHolder> {
@@ -36,19 +37,19 @@ public class FeedbackViewAdapter extends RecyclerView.Adapter<FeedbackViewAdapte
         ImageButton deletebtn;
         ConstraintLayout singlelayout;
 
-        public FeedbackViewHolder(@NonNull View itemView) {
-            super(itemView);
+        public FeedbackViewHolder(@NonNull View itemview) {
+            super(itemview);
 
-            name = itemView.findViewById(R.id.singlename);
-            email = itemView.findViewById(R.id.singleemail);
-            feedback = itemView.findViewById(R.id.singlemessage);
-            ratingBar = itemView.findViewById(R.id.singlerating);
-            deletebtn = itemView.findViewById(R.id.deletebtn);
-            singlelayout = itemView.findViewById(R.id.singlelayout);
+            name = itemview.findViewById(R.id.singlename);
+            email = itemview.findViewById(R.id.singleemail);
+            feedback = itemview.findViewById(R.id.singlemessage);
+            ratingBar = itemview.findViewById(R.id.singlerating);
+            deletebtn = itemview.findViewById(R.id.deletebtn);
+            singlelayout = itemview.findViewById(R.id.singlelayout);
         }
     }
 
-    public FeedbackViewAdapter(List<Feedback> feeedbacklist) {
+    public FeedbackViewAdapter(ArrayList<Feedback> feeedbacklist) {
         this.feeedbacklist = feeedbacklist;
         firebaseDatabase = FirebaseDatabase.getInstance();
         databaseReference = firebaseDatabase.getReference("feedbacks");

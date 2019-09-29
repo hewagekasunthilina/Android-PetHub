@@ -78,40 +78,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.287" />
 
-    <!--<EditText-->
-    <!--android:id="@+id/birthdate"-->
-    <!--android:layout_width="315dp"-->
-    <!--android:layout_height="48dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:ems="10"-->
-    <!--android:hint="Birth Date"-->
-    <!--android:inputType="textPersonName"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.487"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.453" />-->
-
-    <!--<EditText-->
-    <!--android:id="@+id/breed"-->
-    <!--android:layout_width="317dp"-->
-    <!--android:layout_height="53dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:ems="10"-->
-    <!--android:hint="Breed"-->
-    <!--android:inputType="textPersonName"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.541" />-->
-
-
 
     <EditText
         android:id="@+id/gender"
@@ -181,88 +147,7 @@
         app:layout_constraintTop_toTopOf="@+id/textView5"
         app:layout_constraintVertical_bias="0.996" />
 
-    <!--<Spinner-->
-    <!--android:id="@+id/spinner"-->
-    <!--android:layout_width="92dp"-->
-    <!--android:layout_height="30dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginBottom="8dp"-->
-    <!--android:spinnerMode="dropdown"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.818"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.715" />-->
 
-    <!--<Button-->
-        <!--android:id="@+id/pet_upload_btn"-->
-        <!--android:layout_width="123dp"-->
-        <!--android:layout_height="47dp"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--android:background="@drawable/choose_img_btn_rounded"-->
-        <!--android:text="@string/choose_img_btn"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintHorizontal_bias="0.459"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--app:layout_constraintVertical_bias="0.854" />-->
-
-    <!--<ImageView-->
-        <!--android:id="@+id/image_view"-->
-        <!--android:layout_width="328dp"-->
-        <!--android:layout_height="157dp"-->
-        <!--android:layout_above="@id/progress_bar"-->
-        <!--android:layout_below="@id/gender"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--android:layout_marginBottom="8dp"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintHorizontal_bias="0.447"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--app:layout_constraintVertical_bias="0.661" />-->
-
-    <!--<ProgressBar-->
-        <!--android:id="@+id/progress_bar"-->
-        <!--style="@style/Widget.AppCompat.ProgressBar.Horizontal"-->
-        <!--android:layout_width="339dp"-->
-        <!--android:layout_height="21dp"-->
-        <!--android:layout_above="@+id/addpet"-->
-        <!--android:layout_alignParentStart="true"-->
-        <!--android:layout_marginStart="8dp"-->
-        <!--android:layout_marginTop="8dp"-->
-        <!--android:layout_marginEnd="8dp"-->
-        <!--app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--app:layout_constraintEnd_toEndOf="parent"-->
-        <!--app:layout_constraintStart_toStartOf="parent"-->
-        <!--app:layout_constraintTop_toTopOf="parent"-->
-        <!--app:layout_constraintVertical_bias="0.783" />-->
-
-    <!--<TextView-->
-    <!--android:id="@+id/spinner_text"-->
-    <!--android:layout_width="185dp"-->
-    <!--android:layout_height="30dp"-->
-    <!--android:layout_marginStart="8dp"-->
-    <!--android:layout_marginTop="8dp"-->
-    <!--android:layout_marginEnd="8dp"-->
-    <!--android:layout_marginBottom="8dp"-->
-    <!--android:text="@string/spinner_text"-->
-    <!--android:textSize="18sp"-->
-    <!--app:layout_constraintBottom_toBottomOf="parent"-->
-    <!--app:layout_constraintEnd_toEndOf="parent"-->
-    <!--app:layout_constraintHorizontal_bias="0.185"-->
-    <!--app:layout_constraintStart_toStartOf="parent"-->
-    <!--app:layout_constraintTop_toTopOf="parent"-->
-    <!--app:layout_constraintVertical_bias="0.715" />-->
 
     <TextView
         android:id="@+id/show_upload"
