@@ -21,6 +21,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Name :"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView9"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -53,6 +54,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Model :"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView10"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -69,6 +71,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Age :"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView11"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -85,6 +88,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="Gender :"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -101,6 +105,7 @@
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
             android:text="N.name:"
+            android:textStyle="bold"
             app:layout_constraintBottom_toTopOf="@+id/textView13"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
@@ -198,18 +203,38 @@
 
         <Button
             android:id="@+id/dog_del_btn"
-            android:layout_width="66dp"
-            android:layout_height="45dp"
+            android:layout_width="65dp"
+            android:layout_height="34dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="8dp"
+            android:background="@drawable/button_rounded"
             android:text="Delete"
             android:textSize="8sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/text_price"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.759" />
+
+        <Button
+            android:id="@+id/button_update"
+            android:layout_width="65dp"
+            android:layout_height="32dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_rounded"
+            android:text="UPDATE"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.29" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
