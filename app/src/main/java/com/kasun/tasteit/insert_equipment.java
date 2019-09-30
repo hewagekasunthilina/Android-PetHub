@@ -115,19 +115,19 @@ public class insert_equipment extends AppCompatActivity  {
                         if(!publishdate.getText().toString().isEmpty()){
                             uploadFile();
                         }else{
-                            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Please Fill the Publish Date", Toast.LENGTH_SHORT).show();
                         }
                     }else{
-                        Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Please Fill the Contact Number", Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Please Fill the Price", Toast.LENGTH_SHORT).show();
                 }
             }else{
-                Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please Fill the Owner Name", Toast.LENGTH_SHORT).show();
             }
         }else{
-            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Fill the Equipment Name", Toast.LENGTH_SHORT).show();
         }
     }
 

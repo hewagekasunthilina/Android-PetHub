@@ -113,19 +113,19 @@ public class insert_dogfood extends AppCompatActivity  {
                         if(!mfoodManDate.getText().toString().isEmpty()){
                             uploadFile();
                         }else{
-                            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Please Fill the Manufacture Date", Toast.LENGTH_SHORT).show();
                         }
                     }else{
-                        Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Please Fill the Expiry Date", Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Please Fill the Food Price", Toast.LENGTH_SHORT).show();
                 }
             }else{
-                Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please Fill the Food Brand", Toast.LENGTH_SHORT).show();
             }
         }else{
-            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Fill the Food Name", Toast.LENGTH_SHORT).show();
         }
     }
 

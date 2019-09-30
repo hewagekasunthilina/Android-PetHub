@@ -117,19 +117,19 @@ public class insert_pet extends AppCompatActivity  {
                         if(!mgender.getText().toString().isEmpty()){
                             uploadFile();
                         }else{
-                            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(this, "Please Fill the Gender", Toast.LENGTH_SHORT).show();
                         }
                     }else{
-                        Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Please Fill the Nickname", Toast.LENGTH_SHORT).show();
                     }
                 }else{
-                    Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(this, "Please Fill the Age", Toast.LENGTH_SHORT).show();
                 }
             }else{
-                Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please Fill the Model", Toast.LENGTH_SHORT).show();
             }
         }else{
-            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Please Fill the Family Name", Toast.LENGTH_SHORT).show();
         }
     }
 
