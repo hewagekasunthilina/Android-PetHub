@@ -66,5 +66,14 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
+        txtbtn5 = (TextView) findViewById(R.id.arr5);
+        txtbtn5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent5 = new Intent(dashboard.this, contactUs.class);
+                startActivity(intent5);
+            }
+        });
+
     }
 }

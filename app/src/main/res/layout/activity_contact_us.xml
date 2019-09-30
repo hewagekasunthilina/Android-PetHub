@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="735dp"
     android:background="@drawable/pet_background3"
-    tools:context=".dashboard">
+    tools:context=".contactUs">
 
 
 
@@ -22,12 +22,12 @@
             android:layout_marginRight="20dp">
 
 
-
             <TextView
                 android:id="@+id/txtdashboard"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/txtdashboard"
+                android:fontFamily="OpenSans-ExtraBold.ttf"
+                android:text="contact us"
                 android:textColor="#FFFFFF"
                 android:textFontWeight="40dp"
                 android:textSize="28sp" />
@@ -67,16 +67,18 @@
 
                     <ImageView
 
+                        android:id="@+id/fb"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/pet_main" />
+                        android:onClick="goTofacebook"
+                        android:src="@drawable/so5" />
 
                     <TextView
                         android:id="@+id/arr"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="@string/pet_manager"
+                        android:text="facebook"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
@@ -101,18 +103,21 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/insta"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/food" />
+                        android:onClick="goToInsta"
+                        android:src="@drawable/so6" />
 
                     <TextView
-                        android:id="@+id/dashboard_food"
+                        android:id="@+id/arr1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
                         android:text="@string/food_manager"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:text="instagram" />
 
                 </LinearLayout>
 
@@ -135,18 +140,21 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/pintrest"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/equipment" />
+                        android:onClick="goToPintrst"
+                        android:src="@drawable/so" />
 
                     <TextView
                         android:id="@+id/arr3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="@string/equipment_manager"
+                        android:text="pinterest"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:text="pinterest" />
 
                 </LinearLayout>
 
@@ -169,17 +177,20 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/twitter"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/medicine" />
+                        android:onClick="gotoTwitter"
+                        android:src="@drawable/so4" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="@string/medical_manager"
+                        android:text="twitter"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:text="twitter" />
 
                 </LinearLayout>
 
@@ -202,18 +213,21 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/feedbtn"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/feedback" />
+                        android:onClick="goToGmail"
+                        android:src="@drawable/so2" />
 
                     <TextView
                         android:id="@+id/arr4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="@string/feedback_manager"
+                        android:text="Gmail"
                         android:textColor="#6f6f6f"
-                        android:textSize="18sp" />
+                        android:textSize="18sp"
+                        tools:text="Gmail" />
 
                 </LinearLayout>
 
@@ -238,16 +252,18 @@
                     android:padding="16dp">
 
                     <ImageView
+                        android:id="@+id/googlr"
                         android:layout_width="80dp"
                         android:layout_height="80dp"
-                        android:src="@drawable/contactus" />
+                        android:onClick="goToGoogleplus"
+                        android:src="@drawable/so3" />
 
                     <TextView
-                        android:id="@+id/arr5"
+                        android:id="@+id/arr2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="Contact Us "
+                        android:text="google+"
                         android:textColor="#6f6f6f"
                         android:textSize="18sp" />
 
