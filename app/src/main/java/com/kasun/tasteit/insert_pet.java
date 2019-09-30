@@ -1,31 +1,56 @@
 package com.kasun.tasteit;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.ContentResolver;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.View;
+import android.webkit.MimeTypeMap;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
-
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.kasun.tasteit.Model.Feedback;
-import com.kasun.tasteit.Stables.ValidateEmail;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.OnProgressListener;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.StorageTask;
+import com.google.firebase.storage.UploadTask;
+import com.squareup.picasso.Picasso;
 
-import java.text.SimpleDateFormat;
-import java.util.Date;
+public class insert_pet extends AppCompatActivity  {
 
-public class insert_pet extends AppCompatActivity {
+    private static final int PICK_IMAGE_REQUEST = 1;
 
-    EditText familyName,model,nickName, age,gender;
+    EditText mfamilyName, mmodel, mage, mnickname, mgender;
+    Button madddogbtn, mchoose_img1;
+    TextView mshow_upload1;
+    ProgressBar mprogress_bar1;
+    Uri mImageUri;
+    ImageView mimageView1;
 
+    private StorageReference mStorageRef;
+    private DatabaseReference mDatabaseRef;
 
-    FirebaseDatabase firebaseDatabase;
-    DatabaseReference databaseReference;
-    Button addpet;
-    String existkey;
+    private StorageTask mUploadTask;
+
+//    Spinner spinner;
 
 
     @Override
@@ -33,110 +58,199 @@ public class insert_pet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_insert_pet);
 
+        mfamilyName = (EditText) findViewById(R.id.familyName);
+        mmodel = (EditText) findViewById(R.id.model);
+        mage = (EditText) findViewById(R.id.age);
+        mnickname = (EditText) findViewById(R.id.nickName);
+        mgender = (EditText) findViewById(R.id.gender);
+        mimageView1 = (ImageView) findViewById(R.id.image_view1);
 
-        familyName=findViewById(R.id.familyname);
-        model=findViewById(R.id.model);
-        nickName=findViewById(R.id.nickname);
-        age=findViewById(R.id.age);
-        gender=findViewById(R.id.gender);
-        addpet=findViewById(R.id.addpet);
+        mshow_upload1 = (TextView) findViewById(R.id.show_upload);
+        mprogress_bar1 = (ProgressBar) findViewById(R.id.progress_bar1);
+        mStorageRef = FirebaseStorage.getInstance().getReference("Dog_List");
+        mDatabaseRef = FirebaseDatabase.getInstance().getReference("Dog_List");
 
-        firebaseDatabase=FirebaseDatabase.getInstance();
-        databaseReference=firebaseDatabase.getReference("Dogs");
+        //spinner = (Spinner) findViewById(R.id.spinner);
 
-//        rate.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+        madddogbtn = (Button) findViewById(R.id.adddogbtn);
+        mchoose_img1 = (Button) findViewById(R.id.choose_img1);
+
+        mchoose_img1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openFileChooser();
+
+            }
+        });
+
+        madddogbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mUploadTask != null && mUploadTask.isInProgress()){
+                    Toast.makeText(insert_pet.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
+
+                }else {
+                    uploadFile();
+                }
+
+            }
+        });
+//        mshow_upload1.setOnClickListener(new View.OnClickListener() {
 //            @Override
-//            public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-//                ratingcount=rating;
+//            public void onClick(View view) {
+//                openImagesActivity();
+//
 //            }
 //        });
+    }
 
-        if(getIntent().getStringExtra("token").equals("edit")){
-            existkey=getIntent().getStringExtra("id");
-            familyName.setText(getIntent().getStringExtra("familyName"));
-            model.setText(getIntent().getStringExtra("model"));
-            nickName.setText(getIntent().getStringExtra("nickName"));
-            age.setText(getIntent().getStringExtra("age"));
-            gender.setText(getIntent().getStringExtra("gender"));
+    private void openFileChooser(){
 
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
+    }
 
-            addpet.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    editFeedback();
-                }
-            });
-        }else{
-            addpet.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    saveFeedback();
-                }
-            });
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
+
+            mImageUri = data.getData();
+
+            Picasso.with(this).load(mImageUri).into(mimageView1);
         }
     }
 
-    public void saveFeedback(){
-        if(!familyName.getText().toString().isEmpty()){
-            if(!model.getText().toString().isEmpty()){
-                if(new ValidateEmail().isValid(model.getText().toString())){
-                    if(!nickName.getText().toString().isEmpty()){
-                        //if(ratingcount!=0.0){
-                            String key= databaseReference.push().getKey();
-                            databaseReference.child(key).setValue(new Pet(key,familyName.getText().toString(),model.getText().toString(),nickName.getText().toString(),age.getText().toString(),gender.getText().toString()));
+    private String getFileExtension(Uri uri){
 
-                            Toast.makeText(this, "Thank You So Much !", Toast.LENGTH_SHORT).show();
-                            clearPet(null);
-//                        }else{
-//                            Toast.makeText(this, "Please rate us", Toast.LENGTH_SHORT).show();
-                        //}
-                    }else{
-                        Toast.makeText(this, "We need your feedback", Toast.LENGTH_SHORT).show();
-                    }
-                }else{
-                    Toast.makeText(this, "Please fill valid email", Toast.LENGTH_SHORT).show();
-                }
-            }else{
-                Toast.makeText(this, "Please fill your email", Toast.LENGTH_SHORT).show();
-            }
-        }else{
-            Toast.makeText(this, "Please fill your name", Toast.LENGTH_SHORT).show();
-        }
-   }
-
-    public void editFeedback(){
-        if(!familyName.getText().toString().isEmpty()){
-            if(!model.getText().toString().isEmpty()){
-                if(new ValidateEmail().isValid(model.getText().toString())){
-                    if(!nickName.getText().toString().isEmpty()){
-                        //if(ratingcount!=0.0){
-                            databaseReference.child(existkey).setValue(new Pet(existkey,familyName.getText().toString(),model.getText().toString(),nickName.getText().toString(),age.getText().toString(),gender.getText().toString()));
-
-                            Toast.makeText(this, "Thank You So Much !", Toast.LENGTH_SHORT).show();
-                            clearPet(null);
-//                        }else{
-//                            Toast.makeText(this, "Please rate us", Toast.LENGTH_SHORT).show();
-//                        }
-                    }else{
-                        Toast.makeText(this, "We need your feedback", Toast.LENGTH_SHORT).show();
-                    }
-                }else{
-                    Toast.makeText(this, "Please fill valid email", Toast.LENGTH_SHORT).show();
-                }
-            }else{
-                Toast.makeText(this, "Please fill your email", Toast.LENGTH_SHORT).show();
-            }
-        }else{
-            Toast.makeText(this, "Please fill your name", Toast.LENGTH_SHORT).show();
-        }
+        ContentResolver cR = getContentResolver();
+        MimeTypeMap mime = MimeTypeMap.getSingleton();
+        return mime.getExtensionFromMimeType(cR.getType(uri));
     }
 
-    public void clearPet(View view){
-        familyName.setText("");
-        model.setText("");
-        nickName.setText("");
-        age.setText("");
-        gender.setText("");
+    private void uploadFile(){
 
+        if(mImageUri != null){
+            StorageReference fileReference = mStorageRef.child(System.currentTimeMillis()
+                    + "." + getFileExtension(mImageUri));
+
+            mUploadTask = fileReference.putFile(mImageUri)
+                    .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
+                            Handler handler = new Handler();
+                            handler.postDelayed(new Runnable() {
+                                @Override
+                                public void run() {
+                                    mprogress_bar1.setProgress(0);
+
+                                }
+                            }, 500);
+
+                            Toast.makeText(insert_pet.this, "Upload Succesfull", Toast.LENGTH_LONG).show();
+                            Task<Uri> urlTask = taskSnapshot.getStorage().getDownloadUrl();
+                            while (!urlTask.isSuccessful()) ;
+                            Uri downloadUrl = urlTask.getResult();
+
+
+
+                            Pet pet = new Pet(mfamilyName.getText().toString().trim(), mmodel.getText().toString().trim(), mage.getText().toString().trim(),mnickname.getText().toString().trim(),mgender.getText().toString().trim(), downloadUrl.toString());
+                            String uploadId = mDatabaseRef.push().getKey();
+                            mDatabaseRef.child(uploadId).setValue(pet);
+
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(insert_pet.this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+                        }
+                    })
+                    .addOnProgressListener(new OnProgressListener<UploadTask.TaskSnapshot>() {
+                        @Override
+                        public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
+                            double progress = (100.0 * taskSnapshot.getBytesTransferred() / taskSnapshot.getTotalByteCount());
+                            mprogress_bar1.setProgress((int) progress);
+
+                        }
+                    });
+
+        }else{
+
+            Toast.makeText(this, "No File Selected", Toast.LENGTH_SHORT).show();
+        }
+
+    }
+    private void openImagesActivity(){
+        Intent intent = new Intent(this,dog_list.class);
+        startActivity(intent);
     }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//setTitle("Add Equipment");
+
+//        spinner = (Spinner) findViewById(R.id.spinner_equipment);
+//        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.category_equipment, android.R.layout.simple_spinner_item);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner.setAdapter(adapter);
+//        spinner.setOnItemSelectedListener(this);
+
+
+
+//    @Override
+//    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//        String text = parent.getItemAtPosition(position).toString();
+//        Toast.makeText(parent.getContext(), text, Toast.LENGTH_SHORT).show();
+//    }
+//
+//    @Override
+//    public void onNothingSelected(AdapterView<?> parent) {
+//
+//    }
+

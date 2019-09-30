@@ -2,71 +2,72 @@ package com.kasun.tasteit;
 
 public class Pet {
 
-    private String Id;
-    private String FamilyName;
-    private String Model;
-    private String Age;
-    private String NickName;
-    private String Gender;
+    private String familyName;
+    private String model;
+    private String age;
+    private String nickName;
+    private String gender;
+    private String imageUrl;
 
     public Pet(){
 
     }
 
-    public Pet(String id,String familyName, String model, String age, String nickName, String gender) {
-        Id = id;
-        FamilyName = familyName;
-        Model = model;
-        Age = age;
-        NickName = nickName;
-        Gender = gender;
+    public Pet(String familyName, String model, String age, String nickName, String gender, String imageUrl) {
+        this.familyName = familyName;
+        this.model = model;
+        this.age = age;
+        this.nickName = nickName;
+        this.gender = gender;
+        this.imageUrl = imageUrl;
     }
 
-    public String getId(){
-        return Id;
-    }
-
-    public void setId(String id) {
-        Id = id;
-    }
-
-    public String getFamilyName() {
-        return FamilyName;
-    }
 
     public void setFamilyName(String familyName) {
-        FamilyName = familyName;
-    }
-
-    public String getModel() {
-        return Model;
+        this.familyName = familyName;
     }
 
     public void setModel(String model) {
-        Model = model;
-    }
-
-    public String getAge() {
-        return Age;
+        this.model = model;
     }
 
     public void setAge(String age) {
-        Age = age;
-    }
-
-    public String getNickName() {
-        return NickName;
+        this.age = age;
     }
 
     public void setNickName(String nickName) {
-        NickName = nickName;
-    }
-
-    public String getGender() {
-        return Gender;
+        this.nickName = nickName;
     }
 
     public void setGender(String gender) {
-        Gender = gender;
+        this.gender = gender;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public String getFamilyName() {
+        return familyName;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getAge() {
+        return age;
+    }
+
+    public String getNickName() {
+        return nickName;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
     }
 }

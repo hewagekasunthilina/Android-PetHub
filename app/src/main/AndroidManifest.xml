@@ -24,6 +24,7 @@
         <activity android:name=".equipment_dashboard" />
         <activity android:name=".insert_equipment" />
         <activity android:name=".insert_pet" />
+        <activity android:name=".insert_dogfood" />
         <activity android:name=".category_list" />
         <activity android:name=".dashboard" />
         <activity android:name=".SignUp" />
