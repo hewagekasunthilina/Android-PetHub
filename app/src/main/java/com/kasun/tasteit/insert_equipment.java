@@ -90,7 +90,9 @@ public class insert_equipment extends AppCompatActivity  {
                     Toast.makeText(insert_equipment.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
 
                 }else {
-                    uploadFile();
+//                    uploadFile();
+
+                    validateEquipment();
                 }
 
             }
@@ -102,6 +104,31 @@ public class insert_equipment extends AppCompatActivity  {
 
             }
         });
+    }
+
+    public void validateEquipment(){
+
+        if(!equipmentname.getText().toString().isEmpty()){
+            if(!ownername.getText().toString().isEmpty()){
+                if(!price.getText().toString().isEmpty()){
+                    if(!contactnumber.getText().toString().isEmpty()){
+                        if(!publishdate.getText().toString().isEmpty()){
+                            uploadFile();
+                        }else{
+                            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void openFileChooser(){

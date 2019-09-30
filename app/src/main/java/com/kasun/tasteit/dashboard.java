@@ -10,6 +10,7 @@ import android.widget.TextView;
 public class dashboard extends AppCompatActivity {
 
     TextView txtbtn;
+    TextView txtbtn1;
     TextView txtbtn2;
     TextView txtbtn3;
     TextView txtbtn4;
@@ -30,20 +31,11 @@ public class dashboard extends AppCompatActivity {
             }
         });
 
-        txtbtn5 = (TextView) findViewById(R.id.dashboard_food);
-        txtbtn5.setOnClickListener(new View.OnClickListener() {
+        txtbtn1 = (TextView) findViewById(R.id.dashboard_food);
+        txtbtn1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent2 = new Intent(dashboard.this, Food.class);
-                startActivity(intent2);
-            }
-        });
-
-        txtbtn2 = (TextView) findViewById(R.id.arr2);
-        txtbtn2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent2 = new Intent(dashboard.this, insert_pet.class);
                 startActivity(intent2);
             }
         });

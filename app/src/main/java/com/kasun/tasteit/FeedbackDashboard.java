@@ -50,5 +50,15 @@ public class FeedbackDashboard extends AppCompatActivity {
             }
         });
 
+        txtbtn44 = (TextView) findViewById(R.id.contactUs);
+        txtbtn44.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent3 = new Intent(FeedbackDashboard.this, contactUs.class);
+                startActivity(intent3);
+
+            }
+        });
+
     }
 }

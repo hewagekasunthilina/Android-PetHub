@@ -74,7 +74,6 @@ public class insert_pet extends AppCompatActivity  {
         madddogbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                register();
             }
         });
 
@@ -93,7 +92,9 @@ public class insert_pet extends AppCompatActivity  {
                     Toast.makeText(insert_pet.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
 
                 }else {
-                    uploadFile();
+//                    uploadFile();
+
+                    validateDog();
                 }
 
             }
@@ -107,58 +108,31 @@ public class insert_pet extends AppCompatActivity  {
 //        });
     }
 
-    public void register(){
-        initialize();
+    public void validateDog(){
 
-        if(!validate()){
-            Toast.makeText(this, "Dog Register Failed", Toast.LENGTH_SHORT).show();
-        }
-
-        else{
-            onSignupSuccess();
+        if(!mfamilyName.getText().toString().isEmpty()){
+            if(!mmodel.getText().toString().isEmpty()){
+                if(!mage.getText().toString().isEmpty()){
+                    if(!mnickname.getText().toString().isEmpty()){
+                        if(!mgender.getText().toString().isEmpty()){
+                            uploadFile();
+                        }else{
+                            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
         }
     }
 
-    public void onSignupSuccess(){
-
-    }
-
-    public boolean validate(){
-        boolean valid = true;
-        if (familyName.isEmpty()||familyName.length()>20){
-            mfamilyName.setError("Please Enter Valid Name !");
-            valid = false;
-        }
-
-        if (model.isEmpty()||model.length()>10){
-            mmodel.setError("Please Enter Valid Model !");
-            valid = false;
-        }
-
-        if (age.isEmpty()||age.length()>10){
-            mage.setError("Please Enter Valid Age !");
-            valid = false;
-        }
-
-        if (nickName.isEmpty()||nickName.length()>10){
-            mnickname.setError("Please Enter Valid Nickname !");
-            valid = false;
-        }
-
-        if(gender.isEmpty()||gender=="Male"||gender=="Female"||nickName.length()>7){
-            mgender.setError("Please Enter Valid Gender !");
-            valid = false;
-        }
-        return valid;
-    }
-
-    public void initialize(){
-        familyName = mfamilyName.getText().toString().trim();
-        model = mmodel.getText().toString().trim();
-        age = mage.getText().toString().trim();
-        nickName = mnickname.getText().toString().trim();
-        gender = mgender.getText().toString().trim();
-    }
 
     private void openFileChooser(){
 

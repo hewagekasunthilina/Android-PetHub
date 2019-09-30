@@ -90,7 +90,7 @@ public class insert_dogfood extends AppCompatActivity  {
                     Toast.makeText(insert_dogfood.this, "Upload in Progress", Toast.LENGTH_SHORT).show();
 
                 }else {
-                    uploadFile();
+                    validateDogfood();
                 }
 
             }
@@ -102,6 +102,31 @@ public class insert_dogfood extends AppCompatActivity  {
 //
 //            }
 //        });
+    }
+
+    public void validateDogfood(){
+
+        if(!mfoodName.getText().toString().isEmpty()){
+            if(!mfoodBrand.getText().toString().isEmpty()){
+                if(!mfoodPrice.getText().toString().isEmpty()){
+                    if(!mfoodExpDate.getText().toString().isEmpty()){
+                        if(!mfoodManDate.getText().toString().isEmpty()){
+                            uploadFile();
+                        }else{
+                            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                        }
+                    }else{
+                        Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                    }
+                }else{
+                    Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+                }
+            }else{
+                Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+            }
+        }else{
+            Toast.makeText(this, "Please Fill the Form", Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void openFileChooser(){
