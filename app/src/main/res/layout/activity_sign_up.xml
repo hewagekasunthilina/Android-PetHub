@@ -23,7 +23,7 @@
             android:layout_marginLeft="0dp"
             android:hint="Phone Number"
             android:inputType="phone"
-            android:text="0770828319"
+
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white"
             android:textSize="34sp"
@@ -41,7 +41,7 @@
             android:layout_marginLeft="0dp"
             android:hint="Name"
             android:inputType="text"
-            android:text="Kasun"
+
             android:textAlignment="textStart"
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white"
@@ -59,7 +59,7 @@
             android:layout_marginLeft="0dp"
             android:hint="Password"
             android:inputType="textPassword"
-            android:text="kasun123"
+
             android:textColor="@android:color/white"
             android:textColorHint="@android:color/white"
             android:textSize="34sp"

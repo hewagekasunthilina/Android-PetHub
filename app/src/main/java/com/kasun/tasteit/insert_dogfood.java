@@ -62,11 +62,11 @@ public class insert_dogfood extends AppCompatActivity  {
         mfoodBrand = (EditText) findViewById(R.id.foodBrand);
         mfoodPrice = (EditText) findViewById(R.id.foodPrice);
         mfoodExpDate = (EditText) findViewById(R.id.foodExpDate);
-        mfoodExpDate = (EditText) findViewById(R.id.foodManDate);
+        mfoodManDate = (EditText) findViewById(R.id.foodManDate);
         mimageView = (ImageView) findViewById(R.id.image_view2);
 
         //mshow_upload = (TextView) findViewById(R.id.show_upload);
-        mprogress_bar2 = (ProgressBar) findViewById(R.id.progress_bar);
+        mprogress_bar2 = (ProgressBar) findViewById(R.id.progress_bar2);
         mStorageRef = FirebaseStorage.getInstance().getReference("Dog_food");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("Dog_food");
 

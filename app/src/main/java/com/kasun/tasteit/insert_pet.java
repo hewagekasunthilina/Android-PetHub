@@ -39,6 +39,7 @@ public class insert_pet extends AppCompatActivity  {
     private static final int PICK_IMAGE_REQUEST = 1;
 
     EditText mfamilyName, mmodel, mage, mnickname, mgender;
+    private String familyName, model, age, nickName, gender, image_view1;
     Button madddogbtn, mchoose_img1;
     TextView mshow_upload1;
     ProgressBar mprogress_bar1;
@@ -49,9 +50,6 @@ public class insert_pet extends AppCompatActivity  {
     private DatabaseReference mDatabaseRef;
 
     private StorageTask mUploadTask;
-
-//    Spinner spinner;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,13 +65,18 @@ public class insert_pet extends AppCompatActivity  {
 
         mshow_upload1 = (TextView) findViewById(R.id.show_upload);
         mprogress_bar1 = (ProgressBar) findViewById(R.id.progress_bar1);
+        madddogbtn = (Button) findViewById(R.id.adddogbtn);
+        mchoose_img1 = (Button) findViewById(R.id.choose_img1);
+
         mStorageRef = FirebaseStorage.getInstance().getReference("Dog_List");
         mDatabaseRef = FirebaseDatabase.getInstance().getReference("Dog_List");
 
-        //spinner = (Spinner) findViewById(R.id.spinner);
-
-        madddogbtn = (Button) findViewById(R.id.adddogbtn);
-        mchoose_img1 = (Button) findViewById(R.id.choose_img1);
+        madddogbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                register();
+            }
+        });
 
         mchoose_img1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -102,6 +105,59 @@ public class insert_pet extends AppCompatActivity  {
 //
 //            }
 //        });
+    }
+
+    public void register(){
+        initialize();
+
+        if(!validate()){
+            Toast.makeText(this, "Dog Register Failed", Toast.LENGTH_SHORT).show();
+        }
+
+        else{
+            onSignupSuccess();
+        }
+    }
+
+    public void onSignupSuccess(){
+
+    }
+
+    public boolean validate(){
+        boolean valid = true;
+        if (familyName.isEmpty()||familyName.length()>20){
+            mfamilyName.setError("Please Enter Valid Name !");
+            valid = false;
+        }
+
+        if (model.isEmpty()||model.length()>10){
+            mmodel.setError("Please Enter Valid Model !");
+            valid = false;
+        }
+
+        if (age.isEmpty()||age.length()>10){
+            mage.setError("Please Enter Valid Age !");
+            valid = false;
+        }
+
+        if (nickName.isEmpty()||nickName.length()>10){
+            mnickname.setError("Please Enter Valid Nickname !");
+            valid = false;
+        }
+
+        if(gender.isEmpty()||gender=="Male"||gender=="Female"||nickName.length()>7){
+            mgender.setError("Please Enter Valid Gender !");
+            valid = false;
+        }
+        return valid;
+    }
+
+    public void initialize(){
+        familyName = mfamilyName.getText().toString().trim();
+        model = mmodel.getText().toString().trim();
+        age = mage.getText().toString().trim();
+        nickName = mnickname.getText().toString().trim();
+        gender = mgender.getText().toString().trim();
     }
 
     private void openFileChooser(){
