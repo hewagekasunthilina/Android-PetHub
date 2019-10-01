@@ -22,6 +22,8 @@ import java.util.List;
 
 public class dog_list extends AppCompatActivity {
 
+    FloatingActionButton floatingActionButton;
+
 
     private RecyclerView mRecyclerView;
     private ImageAdapter1 mAdapter;
@@ -33,6 +35,7 @@ public class dog_list extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dog_list);
+
 
 
         mRecyclerView = findViewById(R.id.viewdogrecyclerview);
