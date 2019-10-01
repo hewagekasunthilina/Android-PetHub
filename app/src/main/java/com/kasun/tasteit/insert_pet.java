@@ -3,6 +3,7 @@ package com.kasun.tasteit;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.ContentResolver;
 import android.content.Intent;
@@ -153,6 +154,8 @@ public class insert_pet extends AppCompatActivity  {
             Picasso.with(this).load(mImageUri).into(mimageView1);
         }
     }
+
+
 
     private String getFileExtension(Uri uri){
 

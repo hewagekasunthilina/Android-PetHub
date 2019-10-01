@@ -56,6 +56,7 @@ public class dog_list extends AppCompatActivity {
 
                 mRecyclerView.setAdapter(mAdapter);
 
+
             }
 
             @Override

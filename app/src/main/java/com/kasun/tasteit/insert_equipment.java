@@ -216,6 +216,9 @@ public class insert_equipment extends AppCompatActivity  {
         Intent intent = new Intent(this,ImagesActivity.class);
         startActivity(intent);
     }
+
+
+
 }
 
 
